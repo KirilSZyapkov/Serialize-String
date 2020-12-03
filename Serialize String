@@ -1,0 +1,14 @@
+function serializeString(input) {
+    let listChar = {};
+    let line = input[0];
+    for (let a = 0; a < line.length; a++) {
+        if (!listChar.hasOwnProperty(line[a])) {
+            listChar[line[a]] = [];
+        }
+        listChar[line[a]].push(a);
+    }
+    let keys = Object.keys(listChar);
+    for (let key of keys) {
+        console.log(`${key}:${listChar[key].join(`/`)}`);
+    }
+}
